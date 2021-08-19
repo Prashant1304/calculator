@@ -2,24 +2,13 @@ import React,{Component} from "react"
 import "./dummy.css"
 
 class Dummy extends Component {
-    page= {
-        mainpage:"mainPage",
-        dummypage:"dumyPage"
-    }
-    state = {
-        value:"",
-        changepage:this.page.dummypage
-    }
 
-    handleChange() {
-        this.setState({changepage:this.page.mainpage})
-    }
     render() {
         return(
             <div>
                 <div className="mother">
                 <div className="dum-slide">
-                    <div onClick={this.handleChange} style = {{paddingTop: "149px"}} >
+                    <div  style = {{paddingTop: "149px"}} >
                         &#x2936;
                     </div>   
                 </div>

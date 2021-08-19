@@ -9,7 +9,7 @@ class Calculator extends Component {
     }
     state = {
         value:"",
-        changepage:this.page.dummypage
+        changepage:this.page.mainpage
     }
 
     handleChange() {
