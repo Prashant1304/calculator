@@ -2,13 +2,13 @@ import React,{Component} from "react"
 import "./dummy.css"
 
 class Dummy extends Component {
-
+    
     render() {
         return(
             <div>
                 <div className="mother">
                 <div className="dum-slide">
-                    <div  style = {{paddingTop: "149px"}} >
+                    <div onClick={this.handleChange} style = {{paddingTop: "149px"}} >
                         &#x2936;
                     </div>   
                 </div>

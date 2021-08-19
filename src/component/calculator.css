@@ -5,10 +5,11 @@
 }
 .cal-button {
     width: 95px;
-    height: 85px;
-    font-size: 32px;
-    background-color: white;
-    border-color: darkgray;
+    height: 93px;
+    font-size: 27px;
+    background-color: #FAFAFA;
+    border: #F4F4F4 solid 1px;
+    color: #282828 ;
 }
 .cal-but-div {
     display: flex;
@@ -20,8 +21,8 @@
     align-self: flex-end;
     width: 98px;
     text-align: center;
-    height: 341px;
+    height: 464px;
     font-size: 34px;
-    background-color: blue;
+    background-color: #1972E8;
     color: white;
 }
