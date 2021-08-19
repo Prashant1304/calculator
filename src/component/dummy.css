@@ -1,0 +1,22 @@
+.dum-button {
+
+    width: 95px;
+    height: 85px;
+    font-size: 32px;
+    background-color: white;
+    border-color: darkgray;
+}
+.dum-slide {
+    align-self: flex-end;
+    width: 98px;
+    text-align: center;
+    height: 341px;
+    font-size: 34px;
+    background-color: blue;
+    color: white;
+}
+.mother {
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+}

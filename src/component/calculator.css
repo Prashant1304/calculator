@@ -1,0 +1,27 @@
+.cal-middle {
+    /* display: grid; */
+    height: 730px;
+    width: 409px;
+}
+.cal-button {
+    width: 95px;
+    height: 85px;
+    font-size: 32px;
+    background-color: white;
+    border-color: darkgray;
+}
+.cal-but-div {
+    display: flex;
+    flex-flow: row;
+    height: 653px;
+    align-items: flex-end;
+}
+.cal-slide{
+    align-self: flex-end;
+    width: 98px;
+    text-align: center;
+    height: 341px;
+    font-size: 34px;
+    background-color: blue;
+    color: white;
+}
