@@ -1,30 +1,41 @@
 import React,{Component} from "react"
 import "./calculator.css"
-import DummyPage from "./dummyPage"
 
-class Calculator extends Component {
+class Calculator extends React.Component {
+    constructor(props) {
+        super(props);
 
-    state = {
-        value:"",
-    }
-
+        this.state = {
+            value:"",
+            preValue:""
+        }
+        this.handleButton = this.handleButton.bind(this);
+        // this.handlePrebutton = this.handlePrebutton.bind(this)
+      }
     
 
+
     handleButton(e) {
+        // this.setState({preValue:(eval(this.state.preValue))})
+        console.log(e)
         if(e=="=") {
             this.setState({value:(eval(this.state.value))});
+            this.setState({preValue:""})
         } else if (e=="c") {
             this.setState({value:""});
-        } else {
-            this.setState({value:this.state.value+e});
-        }
+        } 
+         else {
+             this.setState({value:this.state.value+e});
+            }
     }
-
+     
     render() {
+        console.log(this.state.preValue)
         return(
             <div>
                 <div className="cal-middle">
-                    <div style={{fontSize: "60px",height: "73px" }}>
+                    <div className="cal-display" >
+                       {/* {this.state.preValue} */}
                         {this.state.value}
                     </div>
                         <div className="cal-but-div">
@@ -41,7 +52,7 @@ class Calculator extends Component {
                                 <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="4">4</button>
                                 <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="5">5</button>
                                 <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="6">6</button>
-                                <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="*">*</button>
+                                <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="*">x</button>
                                 <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="1">1</button>
                                 <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="2">2</button>
                                 <button className="cal-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="3">3</button>

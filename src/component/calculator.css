@@ -14,7 +14,7 @@
 .cal-but-div {
     display: flex;
     flex-flow: row;
-    height: 653px;
+    height: 463px;
     align-items: flex-end;
 }
 .cal-slide{
@@ -25,4 +25,13 @@
     font-size: 34px;
     background-color: #1972E8;
     color: white;
+}
+.cal-display {
+    font-size: 60px;
+    height: 253px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 13px;
+
 }

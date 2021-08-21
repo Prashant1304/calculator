@@ -7,8 +7,8 @@ class Dummy extends Component {
         return(
             <div>
                 <div className="mother">
-                <div className="dum-slide">
-                    <div onClick={this.handleChange} style = {{paddingTop: "149px"}} >
+                <div className="cal-slide">
+                    <div onClick={this.props.handleChangeDum} style = {{paddingTop: "209px"}} >
                         &#x2936;
                     </div>   
                 </div>
@@ -30,6 +30,11 @@ class Dummy extends Component {
                     <button className="dum-button" type="button" value="0">cot</button>
                     <button className="dum-button" type="button" value="=">c</button>
                     <button className="dum-button" value="c" >c</button>
+                    <button className="dum-button" onClick={e => {this.handleButton(e.target.value)}} type="button" value="0">0</button>
+                    <button className="dum-button" type="button" value=".">.</button>
+                    <button className="dum-button" type="button" value="=">=</button>
+                    <button className="dum-button" value="+" >+</button>
+                            
                 </div>
                         
                 </div>
