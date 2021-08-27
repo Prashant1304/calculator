@@ -1,22 +1,40 @@
-.dum-button {
-    width: 95px;
-    height: 93px;
-    font-size: 27px;
-    background-color: #1972E8;
-    border: #1972E8 solid 1px;
-    color: #282828 ;
-}
-.dum-slide {
-    align-self: flex-end;
-    width: 98px;
-    text-align: center;
-    height: 341px;
-    font-size: 34px;
-    background-color: blue;
-    color: white;
-}
-.mother {
+.dum-but {
     display: flex;
-    position: absolute;
-    bottom: 0px;
+    width: 381px;
+    height: 14vh;
+    border: none;
+}
+.dum-button {
+    font-size: 27px;
+    border: none;
+    flex-grow: 1;
+    background-color: #1972E8;
+    color: #fff;
+}
+.dum-but-div {
+    display: flex;
+    flex-flow: row;
+    border: none;
+}
+.dum-slide{   
+    align-self: flex-end;
+    text-align: center;
+    font-size: 34px;
+    background-color: #1972E8;
+    display: flex;
+    color: white;
+    height: 70vh;
+    border: none;
+}
+.dum-display {
+    font-size: 60px;
+    display: flex;
+    height: 204px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-bottom: 13px;
+    border: none;
+}
+.dum-slide-center {
+    align-self: center;
 }

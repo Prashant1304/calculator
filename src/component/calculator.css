@@ -1,37 +1,37 @@
-.cal-middle {
-    /* display: grid; */
-    height: 730px;
-    width: 409px;
+.cal-but {
+    display: flex;
+    width: 381px;
+    height: 14vh;
+
 }
 .cal-button {
-    width: 95px;
-    height: 93px;
     font-size: 27px;
     background-color: #FAFAFA;
     border: #F4F4F4 solid 1px;
+    flex-grow: 1;
     color: #282828 ;
 }
 .cal-but-div {
     display: flex;
     flex-flow: row;
-    height: 463px;
-    align-items: flex-end;
 }
-.cal-slide{
+.cal-slide{   
     align-self: flex-end;
-    width: 98px;
     text-align: center;
-    height: 464px;
     font-size: 34px;
     background-color: #1972E8;
+    display: flex;
     color: white;
+    height: 70vh;
 }
 .cal-display {
     font-size: 60px;
-    height: 253px;
     display: flex;
+    height: 204px;
     align-items: flex-end;
     justify-content: flex-end;
     padding-bottom: 13px;
-
+}
+.cal-slide-center {
+    align-self: center;
 }
