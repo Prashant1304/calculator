@@ -14,7 +14,7 @@ class Dummy extends Component {
                         <div className="dum-slide">
                                 <div className="dum-slide-center" onClick={this.props.handleChangeDum} > &#x2936; </div>   
                             </div>
-                        
+                            
 
                             <div >
                                 <div className="dum-but">
