@@ -26,19 +26,19 @@ class Calculator extends React.Component {
 
     handleButtonNum(e) {
         let target = e.target.value 
-        this.setState({ input:[this.state.input+target] })
+        this.setState({ input:this.state.input+target })
     }
 
     handleAddition(e) {
         let target = e.target.value 
-        this.setState({ input:[this.state.input+target] })
+        this.setState({ input:"" })
         this.setState({ operator:"+" })
         this.state.num1 = this.state.input
     }
 
     handleSubtraction(e) {
         let target = e.target.value 
-        this.setState({ input:[this.state.input+target] })
+        this.setState({ input:"" })
         this.setState({ operator:"-" })
         this.state.num1 = this.state.input
     }
@@ -46,14 +46,14 @@ class Calculator extends React.Component {
     handleMultiplication(e) {
         this.state.num1 = this.state.input
         let target = e.target.value 
-        this.setState({ input:[this.state.input+target] })
+        this.setState({ input:"" })
         this.setState({ operator:"*" })
     }
     
     handleDivision(e) {
         this.state.num1 = this.state.input
         let target = e.target.value
-        this.setState({ input:[this.state.input+target] })
+        this.setState({ input:"" })
         this.setState({ operator:"/" })
     }
 
@@ -83,6 +83,7 @@ class Calculator extends React.Component {
     }
     
     render() {
+        console.log(this.state.input,this.state.operator,this.state.num1,this.state.num2)
         return(
             <div>
                 <div className="cal-middle">
