@@ -1,7 +1,7 @@
 .dum-but {
     display: flex;
     width: 381px;
-    height: 14vh;
+    height: 13vh;
     border: none;
 }
 .dum-button {
@@ -23,13 +23,13 @@
     background-color: #1972E8;
     display: flex;
     color: white;
-    height: 70vh;
+    height: 65vh;
     border: none;
 }
 .dum-display {
     font-size: 60px;
     display: flex;
-    height: 204px;
+    height: 239px;
     align-items: flex-end;
     justify-content: flex-end;
     padding-bottom: 13px;
