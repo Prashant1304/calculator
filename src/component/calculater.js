@@ -31,45 +31,45 @@ class Calculator extends React.Component {
 
     handleAddition(e) {
         let target = e.target.value 
-        this.setState({ input:"" })
+        this.setState({ input:this.state.input+target })
         this.setState({ operator:"+" })
-        this.state.num1 = this.state.input
+        this.setState({num1:this.state.input})
     }
 
     handleSubtraction(e) {
         let target = e.target.value 
-        this.setState({ input:"" })
+        this.setState({ input:this.state.input+target })
         this.setState({ operator:"-" })
-        this.state.num1 = this.state.input
+        this.setState({num1:this.state.input})
     }
 
     handleMultiplication(e) {
-        this.state.num1 = this.state.input
+        this.setState({num1:this.state.input})
         let target = e.target.value 
-        this.setState({ input:"" })
+        this.setState({ input:this.state.input+target })
         this.setState({ operator:"*" })
     }
     
     handleDivision(e) {
-        this.state.num1 = this.state.input
+        this.setState({num1:this.state.input})
         let target = e.target.value
-        this.setState({ input:"" })
+        this.setState({ input:this.state.input+target })
         this.setState({ operator:"/" })
     }
 
     handleEvaluate() {
-        this.state.num2 = this.state.input
+        this.setState({num2:this.state.input})
         if( this.state.operator === "+" ) {
-            this.setState({input:parseInt(this.state.num1) + parseInt(this.state.num2)})
+            this.setState({output:parseInt(this.state.num1) + parseInt(this.state.num2)})
             console.log("+")
         } else if( this.state.operator === "-" ) {
-            this.setState({input:parseInt(this.state.num1) - parseInt(this.state.num2)})
+            this.setState({output:parseInt(this.state.num1) - parseInt(this.state.num2)})
             console.log("-")
         } else if( this.state.operator === "*" ) {
-            this.setState({input:parseInt(this.state.num1) * parseInt(this.state.num2)})
+            this.setState({output:parseInt(this.state.num1) * parseInt(this.state.num2)})
             console.log("x")
         } else if( this.state.operator === "/" ) {
-            this.setState({input:parseInt(this.state.num1) / parseInt(this.state.num2)})
+            this.setState({output:parseInt(this.state.num1) / parseInt(this.state.num2)})
             console.log("/")
         }
     }
@@ -80,6 +80,7 @@ class Calculator extends React.Component {
 
     handleClear(e) {
         this.setState({ input:"" })
+        this.setState({ output:"" })
     }
     
     render() {
