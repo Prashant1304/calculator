@@ -14,7 +14,9 @@ class Calculator extends React.Component {
             button2:"",
             operator:"",
             evaluate:"",
-            ans:""
+            ans:"",
+            previousNumber:"",
+            currentNumber:""
         }
         
         this.handleButtonNum = this.handleButtonNum.bind(this);
