@@ -7,90 +7,98 @@ class Calculator extends React.Component {
 
         this.state = {
             input:"",
+            input2:"",
             num1:"",
             num2:"",
+            butoon1:"",
+            button2:"",
             operator:"",
             evaluate:"",
-            output:""
+            ans:""
         }
         
         this.handleButtonNum = this.handleButtonNum.bind(this);
-        this.handleClear = this.handleClear.bind(this)
+        // this.handleClear = this.handleClear.bind(this)
         this.handleAddition = this.handleAddition.bind(this)
         this.handleDivision = this.handleDivision.bind(this)
         this.handleSubtraction = this.handleSubtraction.bind(this)
         this.handleMultiplication = this.handleMultiplication.bind(this)
         this.handleEvaluate = this.handleEvaluate.bind(this)
+        this.handleClear = this.handleClear.bind(this)
     }
     
+    componentDidUpdate() {
+
+    }
+    
+    handleClear() {
+        this.setState({ input: "" });
+        this.setState({ input2: "" });
+    }
 
     handleButtonNum(e) {
-        let target = e.target.value 
-        this.setState({ input:this.state.input+target })
+        let target = e.target.value
+        this.setState({ input: this.state.input + target });
+        this.setState({ input2: this.state.input2 + target });
     }
 
     handleAddition(e) {
-        let target = e.target.value 
-        this.setState({ input:this.state.input+target })
-        this.setState({ operator:"+" })
-        this.setState({num1:this.state.input})
+        let target = e.target.value
+        this.setState({previousNumber:this.state.input})
+        this.setState({ input: "" });
+        this.setState({ input2: this.state.input2+target });
+        this.setState({operator:"+"})
     }
 
-    handleSubtraction(e) {
-        let target = e.target.value 
-        this.setState({ input:this.state.input+target })
-        this.setState({ operator:"-" })
-        this.setState({num1:this.state.input})
+    handleDivision(e) {
+        let target = e.target.value
+        this.setState({previousNumber:this.state.input})
+        this.setState({operator:"/"})
+        this.setState({ input: "" });
+        this.setState({ input2: this.state.input2+target });
     }
 
     handleMultiplication(e) {
-        this.setState({num1:this.state.input})
-        let target = e.target.value 
-        this.setState({ input:this.state.input+target })
-        this.setState({ operator:"*" })
-    }
-    
-    handleDivision(e) {
-        this.setState({num1:this.state.input})
         let target = e.target.value
-        this.setState({ input:this.state.input+target })
-        this.setState({ operator:"/" })
+        this.setState({previousNumber:this.state.input})
+        this.setState({ input: "" });
+        this.setState({ input2: this.state.input2+target });
+        this.setState({operator:"*"})
     }
 
-    handleEvaluate() {
-        this.setState({num2:this.state.input})
-        if( this.state.operator === "+" ) {
-            this.setState({output:parseInt(this.state.num1) + parseInt(this.state.num2)})
-            console.log("+")
-        } else if( this.state.operator === "-" ) {
-            this.setState({output:parseInt(this.state.num1) - parseInt(this.state.num2)})
-            console.log("-")
-        } else if( this.state.operator === "*" ) {
-            this.setState({output:parseInt(this.state.num1) * parseInt(this.state.num2)})
-            console.log("x")
-        } else if( this.state.operator === "/" ) {
-            this.setState({output:parseInt(this.state.num1) / parseInt(this.state.num2)})
-            console.log("/")
+    handleSubtraction(e) {
+        let target = e.target.value
+        this.setState({previousNumber:this.state.input})
+        this.setState({ input: "" });
+        this.setState({ input2: this.state.input2+target });
+        this.setState({operator:"-"})
+    }
+
+    handleEvaluate(e) {
+        this.state.currentNumber = this.state.input;
+
+        if (this.state.operator == "+") {
+          this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
+        } else if (this.state.operator == "-") {
+          this.setState({ input:parseInt(this.state.previousNumber) - parseInt(this.state.currentNumber) });
+        } else if (this.state.operator == "*") {
+            this.setState({ input:parseInt(this.state.previousNumber) * parseInt(this.state.currentNumber) });
+        } else if (this.state.operator == "/") {
+            this.setState({ input:parseInt(this.state.previousNumber) / parseInt(this.state.currentNumber) });
         }
     }
 
-    handleOutput(e) {
-    
-    }
-
-    handleClear(e) {
-        this.setState({ input:"" })
-        this.setState({ output:"" })
-    }
-    
     render() {
-        console.log(this.state.input,this.state.operator,this.state.num1,this.state.num2)
+        console.log(this.state.num1,this.state.num2)
+        var a=this.state.num2
+        // var b = a.split(" ")
+        console.log(parseInt(this.state.num1),)
         return(
             <div>
                 <div className="cal-middle">
                     <div className="cal-display" >
-                      <p> {this.state.output} </p>
-                        {this.state.input}
+                      <p> {this.state.input} </p>
+                          {this.state.input2} 
                     </div>
                         <div className="cal-but-div">
 
