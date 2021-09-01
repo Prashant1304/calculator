@@ -8,12 +8,9 @@ class Calculator extends React.Component {
         this.state = {
             input:"",
             input2:"",
-            num1:"",
-            num2:"",
             butoon1:"",
             button2:"",
             operator:"",
-            evaluate:"",
             ans:"",
             previousNumber:"",
             currentNumber:""
@@ -26,11 +23,12 @@ class Calculator extends React.Component {
         this.handleSubtraction = this.handleSubtraction.bind(this)
         this.handleMultiplication = this.handleMultiplication.bind(this)
         this.handleEvaluate = this.handleEvaluate.bind(this)
+        this.handleSecondInput = this.handleSecondInput.bind(this)
         this.handleClear = this.handleClear.bind(this)
     }
     
     componentDidUpdate() {
-
+        
     }
     
     handleClear() {
@@ -38,15 +36,59 @@ class Calculator extends React.Component {
         this.setState({ input2: "" });
     }
 
-    handleButtonNum(e) {
-        let target = e.target.value
-        this.setState({ input: this.state.input + target });
+    handleButtonNum(a) {
+        let target = a.target.value
         this.setState({ input2: this.state.input2 + target });
+        // this.setState({button1:parseInt(this.state.input)})
+        this.setState({ input: this.state.input + target });
+        
+        // console.log(this.state.button+)
+        if(this.state.operator ==="+") {
+            if(this.state.previousNumber!=="") {
+                this.state.currentNumber=this.state.currentNumber+target
+                this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
+                this.setState({ button1:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
+                // console.log("prashant")
+            } 
+            // this.state.ans = this.state.input
+            console.log("+")
+        } else if(this.state.operator === "-") {
+            if(this.state.previousNumber!=="") {
+                this.state.currentNumber=this.state.currentNumber+target
+                this.setState({ input:parseInt(this.state.previousNumber) - parseInt(this.state.currentNumber) });
+                this.setState({ button1:parseInt(this.state.previousNumber) - parseInt(this.state.currentNumber) });
+                console.log("prashant")
+            } 
+            console.log("-")
+        } else if(this.state.operator === "*") {
+            if(this.state.previousNumber!=="") {
+                this.state.currentNumber=this.state.currentNumber+target
+                this.setState({ input:parseInt(this.state.previousNumber) * parseInt(this.state.currentNumber) });
+                this.setState({ button1:parseInt(this.state.previousNumber) * parseInt(this.state.currentNumber) });
+                console.log("prashant")
+            }
+            console.log("*")
+        } else if(this.state.operator === "/") {
+            if(this.state.previousNumber!=="") {
+                this.state.currentNumber=this.state.currentNumber+target
+                this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
+                this.setState({ button1:parseInt(this.state.previousNumber) / parseInt(this.state.currentNumber) });
+                console.log("prashant")
+            } 
+            console.log("/")
+
+        }
+    }
+    
+    handleSecondInput(a) {
+        // let target = a.target.value
+        console.log(this.state.currentNumber+"as")
     }
 
     handleAddition(e) {
         let target = e.target.value
         this.setState({previousNumber:this.state.input})
+        this.setState({currentNumber:""})
         this.setState({ input: "" });
         this.setState({ input2: this.state.input2+target });
         this.setState({operator:"+"})
@@ -54,6 +96,7 @@ class Calculator extends React.Component {
 
     handleDivision(e) {
         let target = e.target.value
+        this.setState({currentNumber:""})
         this.setState({previousNumber:this.state.input})
         this.setState({operator:"/"})
         this.setState({ input: "" });
@@ -64,6 +107,7 @@ class Calculator extends React.Component {
         let target = e.target.value
         this.setState({previousNumber:this.state.input})
         this.setState({ input: "" });
+        this.setState({currentNumber:""})
         this.setState({ input2: this.state.input2+target });
         this.setState({operator:"*"})
     }
@@ -72,35 +116,39 @@ class Calculator extends React.Component {
         let target = e.target.value
         this.setState({previousNumber:this.state.input})
         this.setState({ input: "" });
+        this.setState({currentNumber:""})
         this.setState({ input2: this.state.input2+target });
         this.setState({operator:"-"})
     }
 
     handleEvaluate(e) {
+
         this.state.currentNumber = this.state.input;
+         
 
         if (this.state.operator == "+") {
-          this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
+            this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
         } else if (this.state.operator == "-") {
-          this.setState({ input:parseInt(this.state.previousNumber) - parseInt(this.state.currentNumber) });
+            this.setState({ans:this.state.input})
+            this.setState({ input:parseInt(this.state.previousNumber) - parseInt(this.state.currentNumber) });
         } else if (this.state.operator == "*") {
+            this.setState({ans:this.state.input})
             this.setState({ input:parseInt(this.state.previousNumber) * parseInt(this.state.currentNumber) });
         } else if (this.state.operator == "/") {
+            this.setState({ans:this.state.input})
             this.setState({ input:parseInt(this.state.previousNumber) / parseInt(this.state.currentNumber) });
         }
     }
 
     render() {
-        console.log(this.state.num1,this.state.num2)
-        var a=this.state.num2
-        // var b = a.split(" ")
-        console.log(parseInt(this.state.num1),)
+        
+        console.log(this.state.input+"inp",this.state.ans+"ans",this.state.currentNumber+" curr",this.state.previousNumber+" prev",this.state.button1)
         return(
             <div>
                 <div className="cal-middle">
                     <div className="cal-display" >
-                      <p> {this.state.input} </p>
-                          {this.state.input2} 
+                       <p> {this.state.button1} </p>
+                      {this.state.input2}  
                     </div>
                         <div className="cal-but-div">
 
