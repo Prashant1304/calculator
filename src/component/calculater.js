@@ -34,6 +34,7 @@ class Calculator extends React.Component {
     handleClear() {
         this.setState({ input: "" });
         this.setState({ input2: "" });
+        this.setState({ button1: "" });
     }
 
     handleButtonNum(a) {
