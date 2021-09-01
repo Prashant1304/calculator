@@ -148,7 +148,7 @@ class Calculator extends React.Component {
             <div>
                 <div className="cal-middle">
                     <div className="cal-display" >
-                       <p> {this.state.button1} </p>
+                       <p style={{color:"#9F9F9F",width:"1px"}}> {this.state.button1} </p>
                       {this.state.input2}  
                     </div>
                         <div className="cal-but-div">
