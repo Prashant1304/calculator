@@ -37,3 +37,14 @@
 .dum-slide-center {
     align-self: center;
 }
+
+@media only screen and (min-width: 600px) {
+    .dum-display {
+        font-size: 60px;
+        display: flex;
+        height: 210px;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-bottom: 13px;
+    }
+}

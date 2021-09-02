@@ -123,7 +123,7 @@ class Calculator extends React.Component {
         this.setState({ input2: this.state.input2+target });
         this.setState({operator:"-"})
     }
-
+    
     handleEvaluate(e) {
         this.state.currentNumber = this.state.input;
          this.setState({button1:""})
