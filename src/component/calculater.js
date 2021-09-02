@@ -128,7 +128,7 @@ class Calculator extends React.Component {
         this.state.currentNumber = this.state.input;
          this.setState({button1:""})
          this.setState({input2:this.state.button1})
-        if (this.state.operator == "+") {
+         if (this.state.operator == "+") {
             this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
         } else if (this.state.operator == "-") {
             this.setState({ans:this.state.input})
@@ -157,32 +157,30 @@ class Calculator extends React.Component {
 
                                 <div className="cal-but">
                                     <button className="cal-button" onClick={this.handleClear} type="button" value="c">c</button>
-                                    <button className="cal-button"  type="button" >&#177;</button>
-                                    <button className="cal-button"  type="button" value="%">%</button>
-                                    <button className="cal-button"  type="button" >&#9003;</button>
-                                </div>
-                                <div className="cal-but">
                                     <button className="cal-button" onClick={this.handleButtonNum} type="button" value="7">7</button>
-                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="8">8</button>
-                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="9">9</button>
-                                    <button className="cal-button" onClick={this.handleDivision} type="button" value="/">/</button>
-                                </div>
-                                <div className="cal-but">
                                     <button className="cal-button" onClick={this.handleButtonNum} type="button" value="4">4</button>
-                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="5">5</button>
-                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="6">6</button>
-                                    <button className="cal-button" onClick={this.handleMultiplication} type="button" value="x">x</button>
-                                </div>
-                                <div className="cal-but">
                                     <button className="cal-button" onClick={this.handleButtonNum} type="button" value="1">1</button>
-                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="2">2</button>
-                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="3">3</button>
-                                    <button className="cal-button" onClick={ this.handleSubtraction} value="-" >-</button>
+                                    <button className="cal-button"  onClick={this.handleButtonNum} type="button" value="0">0</button>
                                 </div>
                                 <div className="cal-but">
-                                    <button className="cal-button"  onClick={this.handleButtonNum} type="button" value="0">0</button>
+                                    <button className="cal-button"  type="button" >&#177;</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="8">8</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="5">5</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="2">2</button>
                                     <button className="cal-button"  type="button" value=".">.</button>
+                                </div>
+                                <div className="cal-but">
+                                    <button className="cal-button"  type="button" value="%">%</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="9">9</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="6">6</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="3">3</button>
                                     <button className="cal-button" onClick={this.handleEvaluate} type="button" value="=">=</button>
+                                </div>
+                                <div className="cal-but">
+                                    <button className="cal-button"  type="button" >&#9003;</button>
+                                    <button className="cal-button" onClick={this.handleDivision} type="button" value="/">/</button>
+                                    <button className="cal-button" onClick={this.handleMultiplication} type="button" value="x">x</button>
+                                    <button className="cal-button" onClick={ this.handleSubtraction} value="-" >-</button>
                                     <button className="cal-button" onClick={this.handleAddition} value="+" >+</button>
                                 </div>
 
