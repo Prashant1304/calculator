@@ -35,6 +35,8 @@ class Calculator extends React.Component {
         this.setState({ input: "" });
         this.setState({ input2: "" });
         this.setState({ button1: "" });
+        this.setState({currentNumber:""})
+        this.setState({previousNumber:""})
     }
 
     handleButtonNum(a) {
@@ -123,10 +125,9 @@ class Calculator extends React.Component {
     }
 
     handleEvaluate(e) {
-
         this.state.currentNumber = this.state.input;
-         
-
+         this.setState({button1:""})
+         this.setState({input2:this.state.button1})
         if (this.state.operator == "+") {
             this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
         } else if (this.state.operator == "-") {
@@ -149,7 +150,8 @@ class Calculator extends React.Component {
                 <div className="cal-middle">
                     <div className="cal-display" >
                        <p style={{color:"#9F9F9F",width:"1px"}}> {this.state.button1} </p>
-                      {this.state.input2}  
+                      {this.state.input2}
+                      
                     </div>
                         <div className="cal-but-div">
 
