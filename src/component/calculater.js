@@ -155,7 +155,6 @@ class Calculator extends React.Component {
                     </div>
                         <div className="cal-but-div">
 
-                            <div >
                                 <div className="cal-but">
                                     <button className="cal-button" onClick={this.handleClear} type="button" value="c">c</button>
                                     <button className="cal-button"  type="button" >&#177;</button>
@@ -186,7 +185,6 @@ class Calculator extends React.Component {
                                     <button className="cal-button" onClick={this.handleEvaluate} type="button" value="=">=</button>
                                     <button className="cal-button" onClick={this.handleAddition} value="+" >+</button>
                                 </div>
-                            </div>
 
                             <div className="cal-slide">
                                 <div className="cal-slide-center" onClick={this.props.handleChangeCal}> &#x2936; </div>   

@@ -1,8 +1,7 @@
 .cal-but {
     display: flex;
     width: 381px;
-    height: 13vh;
-
+    flex-flow: column;
 }
 .cal-button {
     font-size: 27px;

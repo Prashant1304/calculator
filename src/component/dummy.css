@@ -1,8 +1,7 @@
 .dum-but {
     display: flex;
     width: 381px;
-    height: 13vh;
-    border: none;
+    flex-flow: column;
 }
 .dum-button {
     font-size: 27px;

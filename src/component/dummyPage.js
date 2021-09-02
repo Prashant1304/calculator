@@ -16,7 +16,7 @@ class Dummy extends Component {
                             </div>
                             
 
-                            <div >
+                            
                                 <div className="dum-but">
                                     <button className="dum-button"  type="button" value="c">c</button>
                                     <button className="dum-button"  type="button" >&#177;</button>
@@ -47,7 +47,7 @@ class Dummy extends Component {
                                     <button className="dum-button"  type="button" value="=">$</button>
                                     <button className="dum-button"  value="+" >*</button>
                                 </div>
-                            </div>
+                            
 
                             
                         </div>
