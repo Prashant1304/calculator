@@ -25,6 +25,7 @@ class Calculator extends React.Component {
         this.handleEvaluate = this.handleEvaluate.bind(this)
         this.handleSecondInput = this.handleSecondInput.bind(this)
         this.handleClear = this.handleClear.bind(this)
+        this.handleBackspace = this.handleBackspace.bind(this)
     }
     
     componentDidUpdate() {
@@ -44,7 +45,15 @@ class Calculator extends React.Component {
         this.setState({ input2: this.state.input2 + target });
         // this.setState({button1:parseInt(this.state.input)})
         this.setState({ input: this.state.input + target });
-        
+        if(target==""){
+            var arr = this.state.input2
+            var arr1 = arr.slice(0,-1)
+            this.setState({input2:arr1})
+            var current = this.state.currentNumber
+            var current1 = current.slice(0,-1)
+            this.state.currentNumber=current1
+            console.log(this.state.currentNumber,this.state.previousNumber)
+        }
         // console.log(this.state.button+)
         if(this.state.operator ==="+") {
             if(this.state.previousNumber!=="") {
@@ -91,6 +100,7 @@ class Calculator extends React.Component {
     handleAddition(e) {
         let target = e.target.value
         this.setState({previousNumber:this.state.input})
+        
         this.setState({currentNumber:""})
         this.setState({ input: "" });
         this.setState({ input2: this.state.input2+target });
@@ -126,31 +136,35 @@ class Calculator extends React.Component {
     
     handleEvaluate(e) {
         this.state.currentNumber = this.state.input;
-         this.setState({button1:""})
-         this.setState({input2:this.state.button1})
-         if (this.state.operator == "+") {
-            this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
-        } else if (this.state.operator == "-") {
-            this.setState({ans:this.state.input})
-            this.setState({ input:parseInt(this.state.previousNumber) - parseInt(this.state.currentNumber) });
-        } else if (this.state.operator == "*") {
-            this.setState({ans:this.state.input})
-            this.setState({ input:parseInt(this.state.previousNumber) * parseInt(this.state.currentNumber) });
-        } else if (this.state.operator == "/") {
-            this.setState({ans:this.state.input})
-            this.setState({ input:parseInt(this.state.previousNumber) / parseInt(this.state.currentNumber) });
-        }
+        this.setState({button1:""})
+        this.setState({input2:this.state.button1})
+    }
+
+    handleBackspace(e) {
+        var arr = this.state.input2
+        var arr1 = arr.slice(0,-1)
+        var arr2 = this.state.currentNumber
+        var arr3 = arr2.slice(0,-1)
+        this.setState({input2:arr1})
+        this.setState({currentNumber:arr3})
+        
     }
 
     render() {
-        
+        // console.log(this.state.input2.length)
         console.log(this.state.input+"inp",this.state.ans+"ans",this.state.currentNumber+" curr",this.state.previousNumber+" prev",this.state.button1)
         return(
             <div>
                 <div className="cal-middle">
                     <div className="cal-display" >
-                       <p style={{color:"#9F9F9F",width:"1px"}}> {this.state.button1} </p>
-                      {this.state.input2}
+                        <div>
+                        <div className="cal-butt2">
+                       {this.state.button1}
+                        </div>
+                        <div>
+                      {this.state.input2} 
+                        </div>
+                        </div>
                       
                     </div>
                         <div className="cal-but-div">
@@ -177,7 +191,7 @@ class Calculator extends React.Component {
                                     <button className="cal-button" onClick={this.handleEvaluate} type="button" value="=">=</button>
                                 </div>
                                 <div className="cal-but">
-                                    <button className="cal-button"  type="button" >&#9003;</button>
+                                    <button className="cal-button" onClick={this.handleButtonNum} type="button" value="" >&#9003;</button>
                                     <button className="cal-button" onClick={this.handleDivision} type="button" value="/">/</button>
                                     <button className="cal-button" onClick={this.handleMultiplication} type="button" value="x">x</button>
                                     <button className="cal-button" onClick={ this.handleSubtraction} value="-" >-</button>
