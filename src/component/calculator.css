@@ -46,8 +46,13 @@
     }
 }
 
-.cal-butt2 {
+.cal-butt1 {
+    text-align: end;
+    font-size: 39px;
     color: #9F9F9F;
+}
+.cal-butt2 {
+    color: #282828;
     text-align-last: end;
-    
+    font-size: 41px;
 }

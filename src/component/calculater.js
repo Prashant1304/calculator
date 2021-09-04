@@ -158,14 +158,14 @@ class Calculator extends React.Component {
                 <div className="cal-middle">
                     <div className="cal-display" >
                         <div>
-                        <div className="cal-butt2">
+                        <div className="cal-butt1">
                        {this.state.button1}
                         </div>
-                        <div>
-                      {this.state.input2} 
+                        <div className="cal-butt2">
+                        <div  ></div>
+                      {this.state.input2}
                         </div>
                         </div>
-                      
                     </div>
                         <div className="cal-but-div">
 
