@@ -83,7 +83,7 @@ class Calculator extends React.Component {
         } else if(this.state.operator === "/") {
             if(this.state.previousNumber!=="") {
                 this.state.currentNumber=this.state.currentNumber+target
-                this.setState({ input:parseInt(this.state.previousNumber) + parseInt(this.state.currentNumber) });
+                this.setState({ input:parseInt(this.state.previousNumber) / parseInt(this.state.currentNumber) });
                 this.setState({ button1:parseInt(this.state.previousNumber) / parseInt(this.state.currentNumber) });
                 console.log("prashant")
             } 
